@@ -26,8 +26,6 @@ AppAsset::register($this);
 
 <div class="wrap">
 
-<!--    <div class="navbar-default"></div>-->
-
     <?php
     NavBar::begin([
         'brandLabel' => 'DIPLOM SHOP',
@@ -36,26 +34,29 @@ AppAsset::register($this);
             'class' => 'navbar-default navbar-fixed-top',
         ],
     ]);
+
+    $items = [
+        ['label' => "Комп'ютерна техніка", 'url' => ['/tech/index']],
+        ['label' => 'About', 'url' => ['/site/about']],
+//            ['label' => 'Contact', 'url' => ['/site/contact']],
+            Yii::$app->user->isGuest ? (
+                ['label' => 'Login', 'url' => ['/site/login']]
+            ) : (
+                '<li>' .
+                  Html::beginForm(['/site/logout'], 'post')
+                . Html::submitButton(
+                    'Logout (' . Yii::$app->user->identity->username . ')',
+//                    ['class' => 'btn btn-link']
+                    ['class' => 'btn btn-primary logout-btn']
+                )
+                . Html::endForm()
+                . '</li>'
+            )
+    ];
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-//            ['label' => 'Home', 'url' => ['']],
-            ['label' => 'About', 'url' => ['/site/about']],
-//            ['label' => 'Contact', 'url' => ['/site/contact']],
-//            Yii::$app->user->isGuest ? (
-//                ['label' => 'Login', 'url' => ['/site/login']]
-//            ) : (
-//                '<li>'
-//                . Html::beginForm(['/site/logout'], 'post')
-//                . Html::submitButton(
-//                    'Logout (' . Yii::$app->user->identity->username . ')',
-//                    ['class' => 'btn btn-link']
-//                )
-//                . Html::endForm()
-//                . '</li>'
-//            )
-        ],
+        'items' => $items,
     ]);
     NavBar::end();
     ?>
