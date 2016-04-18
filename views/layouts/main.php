@@ -25,6 +25,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+    <div class="container almost-white">
 
     <?php
     NavBar::begin([
@@ -37,8 +38,6 @@ AppAsset::register($this);
 
     $currentUser = Yii::$app->user->identity;
     $role = $currentUser->role;
-//    $color = 'green';
-//    $color = 'lightgreen';
     $color = 'forestgreen';
     if ($role == 2) {
         $color = 'orange';
@@ -46,10 +45,12 @@ AppAsset::register($this);
     if ($role == 3) {
         $color = 'red';
     }
+    if ($role == 5) {
+        $color = 'brown';
+    }
 
     $items = [
-        ['label' => "Комп'ютерна техніка", 'url' => ['/tech/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
+        ['label' => "Техніка", 'url' => ['/tech/index']],
 //            ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 '<li>' .
@@ -68,21 +69,34 @@ AppAsset::register($this);
                 '<li>' .
                   Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
-//                    'Logout (' . Yii::$app->user->identity->username . ')',
-//                    'Logout (' . Yii::$app->user->identity->id . ')',
-//                    'Logout (' . Yii::$app->user->identity->level . ')',
-//                    'Logout (' . $currentUser->level . ')',
                     'Вийти',
                     ['class' => 'btn btn-primary logout-btn']
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            ),
     ];
+
+    if ($role > 1) {
+        $items[] = ['label' => "Продаж", 'url' => ['/sell/index']];
+    }
+    if ($role > 2) {
+        $items[] = ['label' => "admin", 'url' => ['/admin/index']];
+    }
+    if ($role > 4) {
+        $items[] = [
+            'label' => ' <span class="glyphicon glyphicon-wrench"></span> ',
+            'url' => ['/tools/index']
+        ];
+//        $items[] = ['label' => "tools", 'url' => ['/tools']];
+    }
+
+    $items[] = ['label' => 'About', 'url' => ['/site/about']];
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $items,
+        'encodeLabels' => false,
     ]);
     NavBar::end();
     ?>
@@ -92,6 +106,7 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= $content ?>
+    </div>
     </div>
 </div>
 

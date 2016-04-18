@@ -16,6 +16,24 @@ class User extends Object implements IdentityInterface {
     public $role;
 
     private static $users = [
+        '500' => [
+            'id' => '500',
+            'name' => 'Гроза П.М.',
+            'username' => 'groza',
+            'password' => 'groza-pwd',
+            'authKey' => 'test500key',
+            'accessToken' => '500-token',
+            'role' => 5,
+        ],
+        '501' => [
+            'id' => '501',
+            'name' => 'Колос Д.С.',
+            'username' => 'kolos',
+            'password' => 'kolos-pwd',
+            'authKey' => 'test501key',
+            'accessToken' => '501-token',
+            'role' => 5,
+        ],
         '100' => [
             'id' => '100',
             'name' => 'Admin',

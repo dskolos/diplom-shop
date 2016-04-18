@@ -5,19 +5,22 @@
 .login-btn {
     margin-top: 8px;
     margin-left: 8px;
+    margin-right: 8px;
 }
 .logout-btn {
     margin-top: 8px;
     margin-left: 8px;
+    margin-right: 8px;
 }
 .user-li {
     padding-top: 15px;
     margin-left: 8px;
-    /*color: darkblue;*/
     color: blue;
-    /*color: forestgreen;*/
 }
 .user-li span {
     font-weight: bold;
 }
+/*.almost-white {*/
+    /*background-color: #eee;*/
+/*}*/
 
