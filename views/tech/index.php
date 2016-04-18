@@ -11,7 +11,7 @@ $this->title = 'DIPLOM SHOP';
 
         <h1> Інтернет-магазин комп'ютерної техніки </h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+        <h3> Модель </h3>
 
     </div>
 

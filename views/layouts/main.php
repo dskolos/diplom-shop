@@ -35,18 +35,44 @@ AppAsset::register($this);
         ],
     ]);
 
+    $currentUser = Yii::$app->user->identity;
+    $role = $currentUser->role;
+//    $color = 'green';
+//    $color = 'lightgreen';
+    $color = 'forestgreen';
+    if ($role == 2) {
+        $color = 'orange';
+    }
+    if ($role == 3) {
+        $color = 'red';
+    }
+
     $items = [
         ['label' => "Комп'ютерна техніка", 'url' => ['/tech/index']],
         ['label' => 'About', 'url' => ['/site/about']],
 //            ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+                '<li>' .
+                Html::beginForm(['/site/login'], 'post')
+                . Html::submitButton(
+                    'Увійти',
+                    ['class' => 'btn btn-success login-btn']
+                )
+                . Html::endForm()
+                . '</li>'
+
             ) : (
+                '<li class="user-li">' . 'Користувач:' .
+                "<span style='color: $color'> $currentUser->name <span> " .
+                '</li>' .
                 '<li>' .
                   Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-//                    ['class' => 'btn btn-link']
+//                    'Logout (' . Yii::$app->user->identity->username . ')',
+//                    'Logout (' . Yii::$app->user->identity->id . ')',
+//                    'Logout (' . Yii::$app->user->identity->level . ')',
+//                    'Logout (' . $currentUser->level . ')',
+                    'Вийти',
                     ['class' => 'btn btn-primary logout-btn']
                 )
                 . Html::endForm()
