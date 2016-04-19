@@ -24,3 +24,6 @@
     /*background-color: #eee;*/
 /*}*/
 
+body {
+    overflow: scroll;
+}

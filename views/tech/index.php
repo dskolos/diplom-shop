@@ -15,4 +15,8 @@ $this->title = 'DIPLOM SHOP';
 
     </div>
 
+    <div>
+        <p> Розділ техніки, що продається. </p>
+    </div>
+
 </div>
