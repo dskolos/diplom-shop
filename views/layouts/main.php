@@ -52,6 +52,7 @@ AppAsset::register($this);
     $items = [
         ['label' => "Техніка", 'url' => ['/tech/index']],
 //            ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'About', 'url' => ['/site/about']],
             Yii::$app->user->isGuest ? (
                 '<li>' .
                 Html::beginForm(['/site/login'], 'post')
@@ -88,10 +89,9 @@ AppAsset::register($this);
             'label' => ' <span class="glyphicon glyphicon-wrench"></span> ',
             'url' => ['/tools/index']
         ];
-//        $items[] = ['label' => "tools", 'url' => ['/tools']];
     }
 
-    $items[] = ['label' => 'About', 'url' => ['/site/about']];
+//    $items[] = ['label' => 'About', 'url' => ['/site/about']];
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
