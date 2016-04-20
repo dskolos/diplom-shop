@@ -34,6 +34,15 @@ class User extends Object implements IdentityInterface {
             'accessToken' => '501-token',
             'role' => 5,
         ],
+        '503' => [
+            'id' => '503',
+            'name' => 'Колос Ф.Д.',
+            'username' => 'fedia',
+            'password' => 'fedia-pwd',
+            'authKey' => 'test503key',
+            'accessToken' => '503-token',
+            'role' => 5,
+        ],
         '100' => [
             'id' => '100',
             'name' => 'Admin',
