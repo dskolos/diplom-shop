@@ -27,3 +27,12 @@
 body {
     overflow-y: scroll;
 }
+
+.wide-picture {
+    width: 92%;
+}
+
+.img-center {
+    text-align: center;
+}
+

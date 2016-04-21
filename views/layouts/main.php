@@ -25,7 +25,8 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <div class="container almost-white">
+<!--    <div class="container almost-white">     ===============-->
+<!--    <div class="container almost-white">     ===============-->
 
     <?php
     NavBar::begin([
@@ -107,7 +108,7 @@ AppAsset::register($this);
         ]) ?>
         <?= $content ?>
     </div>
-    </div>
+<!--    </div>-->
 </div>
 
 <footer class="footer">
