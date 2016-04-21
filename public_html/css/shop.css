@@ -29,10 +29,13 @@ body {
 }
 
 .wide-picture {
-    width: 92%;
+    max-width: 92%;
 }
 
 .img-center {
     text-align: center;
+    border: 1px dotted darkgray;
+    border-radius: 12px;
+
 }
 

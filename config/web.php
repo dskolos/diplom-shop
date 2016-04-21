@@ -44,7 +44,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '' => '/tech/index',
-                '/tools' => '/tools/index',
+                '/tools' => '/tool/index',
                 '/admin' => '/admin/index',
                 '/sell' => '/sell/index',
                 '/contact' => '/site/contact',
@@ -68,6 +68,9 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
+    ];
+    $config['modules']['tools'] = [
+        'class' => 'app\modules\tools\ToolsModule',
     ];
 }
 

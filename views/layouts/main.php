@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\menus\MainMenu;
 
 AppAsset::register($this);
 ?>
@@ -25,8 +26,6 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-<!--    <div class="container almost-white">     ===============-->
-<!--    <div class="container almost-white">     ===============-->
 
     <?php
     NavBar::begin([
@@ -37,68 +36,8 @@ AppAsset::register($this);
         ],
     ]);
 
-    $currentUser = Yii::$app->user->identity;
-    $role = $currentUser->role;
-    $color = 'forestgreen';
-    if ($role == 2) {
-        $color = 'orange';
-    }
-    if ($role == 3) {
-        $color = 'red';
-    }
-    if ($role == 5) {
-        $color = 'brown';
-    }
+    echo Nav::widget(MainMenu::getMenu());
 
-    $items = [
-        ['label' => "Техніка", 'url' => ['/tech/index']],
-//            ['label' => 'Contact', 'url' => ['/site/contact']],
-        ['label' => 'About', 'url' => ['/site/about']],
-            Yii::$app->user->isGuest ? (
-                '<li>' .
-                Html::beginForm(['/site/login'], 'post')
-                . Html::submitButton(
-                    'Увійти',
-                    ['class' => 'btn btn-success login-btn']
-                )
-                . Html::endForm()
-                . '</li>'
-
-            ) : (
-                '<li class="user-li">' . 'Користувач:' .
-                "<span style='color: $color'> $currentUser->name <span> " .
-                '</li>' .
-                '<li>' .
-                  Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Вийти',
-                    ['class' => 'btn btn-primary logout-btn']
-                )
-                . Html::endForm()
-                . '</li>'
-            ),
-    ];
-
-    if ($role > 1) {
-        $items[] = ['label' => "Продаж", 'url' => ['/sell/index']];
-    }
-    if ($role > 2) {
-        $items[] = ['label' => "admin", 'url' => ['/admin/index']];
-    }
-    if ($role > 4) {
-        $items[] = [
-            'label' => ' <span class="glyphicon glyphicon-wrench"></span> ',
-            'url' => ['/tools/index']
-        ];
-    }
-
-//    $items[] = ['label' => 'About', 'url' => ['/site/about']];
-
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $items,
-        'encodeLabels' => false,
-    ]);
     NavBar::end();
     ?>
 
@@ -108,15 +47,13 @@ AppAsset::register($this);
         ]) ?>
         <?= $content ?>
     </div>
-<!--    </div>-->
+
 </div>
 
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; DIPLOM SHOP 2016</p>
-<!--        <p class="pull-right">--><?//= Yii::powered() ?><!--</p>-->
         <p class="pull-right">Powered by <a href="http://www.yiiframework.com/" target="_blank">Yii Framework</a></p>
-<!--        <p class="pull-right">Powered by Yii Framework</p>-->
     </div>
 </footer>
 
