@@ -45,7 +45,8 @@ $config = [
             'rules' => [
                 '' => '/tech/index',
                 '/tools' => '/tool/index',
-                '/admin' => '/admin/index',
+//                '/admin' => '/admin/index',
+                '/admin' => '/admin/default/index',
                 '/sell' => '/sell/index',
                 '/contact' => '/site/contact',
                 '/login' => '/site/login',
@@ -71,6 +72,9 @@ if (YII_ENV_DEV) {
     ];
     $config['modules']['tools'] = [
         'class' => 'app\modules\tools\ToolsModule',
+    ];
+    $config['modules']['admin'] = [
+        'class' => 'app\modules\admin\AdminModule',
     ];
 }
 

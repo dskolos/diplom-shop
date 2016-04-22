@@ -34,7 +34,7 @@ class MainMenu {
         }
 
         if ($role > 2) {
-            $menu['items'][] = ['label' => "admin", 'url' => ['/admin/index']];
+            $menu['items'][] = ['label' => "admin", 'url' => ['/admin/default/index']];
         }
 
         if ($role > 4) {
