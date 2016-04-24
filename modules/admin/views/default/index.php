@@ -1,80 +1,53 @@
 <?php
-use yii\bootstrap\Nav;
-use app\menus\AdminMenus;
+//use yii\bootstrap\Nav;
+//use app\menus\AdminMenus;
+//use app\widgets\ShowLoremPixel;
 /* @var $this yii\web\View */
 
 $this->title = 'admin';
+$this->params['breadcrumbs'][] = '<strong> Таблиці: </strong>';
+$this->params['breadcrumbs'][] = ['label' => ' <span class="glyphicon glyphicon-bold"></span> Бренди ',
+    'url' => ['brands/index'],
+    'template' => "<strong title='Бренди'> &nbsp; {link} </strong>"];
+$this->params['breadcrumbs'][] = ['label' => ' <span class="glyphicon glyphicon-list-alt"></span> Tables ',
+    'url' => ['tables/index'],
+    'template' => "<strong title='Бренди'> &nbsp; {link} </strong>"];
+$this->params['breadcrumbs'][] = ['label' => ' <span class="glyphicon glyphicon-camera"></span> Фото ',
+    'url' => ['photos/index'],
+    'template' => "<strong title='Фото'> &nbsp; {link} </strong>" ];
+$this->params['breadcrumbs'][] = ['label' => '<strong> admin: </strong>',
+    'template' => '<span style="margin-left: 35px"> {link} </span>'];
+
+
 ?>
-<h1 class="text-center"> Інтерфейс адміністрування </h1>
-<?= Nav::widget(AdminMenus::getTopMenu()) ?>
-<br>
-<h3> Тут передбачається редагувати таблиці </h3>
-<br>
-<!--<h3> Випадкові зображення: </h3>-->
+<h1 class="text-center"> Редагування таблиць </h1>
+<?//= Nav::widget(AdminMenus::getTopMenu()) ?>
 <!--<br>-->
-<div style="float: left; margin: 5px">
-    <h4> abstract </h4>
-    <img src="http://lorempixel.com/400/200/abstract" width="220px">
+<!--<h3> Тут передбачається редагувати таблиці </h3>-->
+<br>
+
+<?//= ShowLoremPixel::widget() ?>
+<div class="row">
+
+    <div class="col-sm-6">
+        <h3>
+            <a href="/admin/brands/index"> <span class="glyphicon glyphicon-bold"></span>&nbsp;Бренди </a>
+            <span> - Таблиця брендів</span>
+        </h3>
+    </div>
+
+    <div class="col-sm-6">
+        <h3>
+            <a href="/admin/tables/index"> <span class="glyphicon glyphicon-list-alt"></span>&nbsp;Tables </a>
+            <span> - Таблиця таблиць</span>
+        </h3>
+    </div>
+
+    <div class="col-sm-6">
+        <h3>
+            <a href="/admin/photos/index"> <span class="glyphicon glyphicon-camera"></span>&nbsp;Фото </a>
+            <span> - Таблиця фотографій</span>
+        </h3>
+    </div>
+
 </div>
-
-<div style="float: left; margin: 5px">
-    <h4> animals </h4>
-    <img src="http://lorempixel.com/400/200/animals" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> business </h4>
-    <img src="http://lorempixel.com/400/200/business" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> cats </h4>
-    <img src="http://lorempixel.com/400/200/cats" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> city </h4>
-    <img src="http://lorempixel.com/400/200/city" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> food </h4>
-    <img src="http://lorempixel.com/400/200/food" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> nightlife </h4>
-    <img src="http://lorempixel.com/400/200/nightlife" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> fashion </h4>
-    <img src="http://lorempixel.com/400/200/fashion" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> people </h4>
-    <img src="http://lorempixel.com/400/200/people" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> nature </h4>
-    <img src="http://lorempixel.com/400/200/nature" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> sports </h4>
-    <img src="http://lorempixel.com/400/200/sports" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> technics </h4>
-    <img src="http://lorempixel.com/400/200/technics" width="220px">
-</div>
-
-<div style="float: left; margin: 5px">
-    <h4> transport </h4>
-    <img src="http://lorempixel.com/400/200/transport" width="220px">
-</div>
-
-

@@ -50,20 +50,13 @@ class ToolsMenus {
                 'class' => 'nav nav-pills nav-stacked',
             ],
             'items' => [
-                '<br>',
-                '<h3 class="text-center"> Зміст </h3>',
-                '<br>',
                 [
                     'label' => 'Схеми бази даних',
-                    'url' => ['/tool/index'],
-                ],
-                [
-                    'label' => 'Список літератури',
-                    'url' => ['/tool/list'],
+                    'url' => ['/tools/info/index'],
                 ],
                 [
                     'label' => 'Інше...',
-                    'url' => ['/tool/inshe'],
+                    'url' => ['/tools/info/inshe'],
                 ],
             ]
         ];

@@ -9,7 +9,7 @@ $topMenu = ToolsMenus::TopMenu();
 $this->title = 'Tools';
 
 ?>
-        <h1 class="text-center"> <span class="glyphicon glyphicon-wrench"></span> Tools </h1>
+        <h1 class="text-center"> <span class="glyphicon glyphicon-info-sign"></span> Info </h1>
 
 <div class="row">
 
@@ -18,8 +18,6 @@ $this->title = 'Tools';
     </div>
 
     <div class="col-sm-9">
-
-        <?= Nav::widget($topMenu) ?>
 
         <div>
             <h3 class="text-center"> Схема бази даних: </h3>

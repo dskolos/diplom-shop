@@ -44,14 +44,16 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '' => '/tech/index',
-                '/tools' => '/tool/index',
-//                '/admin' => '/admin/index',
-                '/admin' => '/admin/default/index',
+//                '/tools' => '/tool/index',
+                '/tools' => '/tools/info/index',
+                '/db' => '/db/default/index',
+                '/admin' => '/admin/index',
+//                '/admin' => '/admin/default/index',
                 '/sell' => '/sell/index',
                 '/contact' => '/site/contact',
                 '/login' => '/site/login',
 //                '/<action>' => '/site/<action>',
-                '/about' => '/site/about',
+                '/about' => '/about/index',
             ],
         ],
 
@@ -73,8 +75,11 @@ if (YII_ENV_DEV) {
     $config['modules']['tools'] = [
         'class' => 'app\modules\tools\ToolsModule',
     ];
-    $config['modules']['admin'] = [
-        'class' => 'app\modules\admin\AdminModule',
+//    $config['modules']['admin'] = [
+//        'class' => 'app\modules\admin\AdminModule',
+//    ];
+    $config['modules']['db'] = [
+        'class' => 'app\modules\db\DbModule',
     ];
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\modules\admin\models;
 
 use Yii;
 
@@ -10,6 +10,7 @@ use Yii;
  * @property string $id
  * @property string $name
  * @property string $description
+ * @property string $full_description
  *
  * @property Products[] $products
  */
@@ -30,6 +31,7 @@ class Brands extends \yii\db\ActiveRecord
     {
         return [
             [['name'], 'required'],
+            [['full_description'], 'string'],
             [['name', 'description'], 'string', 'max' => 255],
         ];
     }
@@ -43,6 +45,7 @@ class Brands extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'description' => 'Description',
+            'full_description' => 'Full Description',
         ];
     }
 
@@ -52,5 +55,14 @@ class Brands extends \yii\db\ActiveRecord
     public function getProducts()
     {
         return $this->hasMany(Products::className(), ['brand_id' => 'id']);
+    }
+
+    /**
+     * @inheritdoc
+     * @return BrandsQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new BrandsQuery(get_called_class());
     }
 }

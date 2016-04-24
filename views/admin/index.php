@@ -9,7 +9,7 @@ $this->title = 'admin';
 
     <div class="text-center">
 
-        <h1> Інтерфейс адміністрування </h1>
+        <h1> <span class="glyphicon glyphicon-wrench"></span> Інтерфейс адміністрування </h1>
 
         <h3> ... </h3>
 

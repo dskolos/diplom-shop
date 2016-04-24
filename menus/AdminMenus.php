@@ -20,12 +20,12 @@ class AdminMenus {
                     'url' => ['/admin/default/index'],
                 ],
                 [
-                    'label' => 'Таблиця 1',
-                    'url' => ['#'],
+                    'label' => 'Бренди',
+                    'url' => ['/admin/brands/index'],
                 ],
                 [
-                    'label' => 'Таблиця 2',
-                    'url' => ['#'],
+                    'label' => 'Фото',
+                    'url' => ['/admin/photos/index'],
                 ],
                 [
                     'label' => 'Таблиця 3',

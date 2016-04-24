@@ -32,7 +32,7 @@ class User extends Object implements IdentityInterface {
             'password' => 'kolos-pwd',
             'authKey' => 'test501key',
             'accessToken' => '501-token',
-            'role' => 5,
+            'role' => 7,
         ],
         '503' => [
             'id' => '503',
@@ -41,7 +41,7 @@ class User extends Object implements IdentityInterface {
             'password' => 'fedia-pwd',
             'authKey' => 'test503key',
             'accessToken' => '503-token',
-            'role' => 5,
+            'role' => 7,
         ],
         '100' => [
             'id' => '100',

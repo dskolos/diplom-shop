@@ -34,24 +34,59 @@ class MainMenu {
         }
 
         if ($role > 2) {
-            $menu['items'][] = ['label' => "admin", 'url' => ['/admin/default/index']];
+            $menu['items'][] = [
+//                'label' => "admin",
+                'label' => '<span class="glyphicon glyphicon-wrench"></span>',
+//                'url' => ['/admin/default/index'],
+                'url' => ['/admin/index'],
+                'title' => 'aaa',
+                'active' =>
+                    Yii::$app->controller->getUniqueId() === 'admin'
+//                    || Yii::$app->controller->getUniqueId() === 'admin/brands'
+
+            ];
         }
 
         if ($role > 4) {
             $menu['items'][] = [
-                'label' => ' <span class="glyphicon glyphicon-wrench"></span> ',
-                'url' => ['/tool/index'],
+//                'label' => ' <span class="glyphicon glyphicon-wrench"></span> ',
+                'label' => '<span class="glyphicon glyphicon-info-sign"></span>',
+                'url' => ['/tools/info/index'],
                 'active' => (
 //                        Yii::$app->controller->getRoute() === 'tool/index'
 //                    ||  Yii::$app->controller->getRoute() === 'tool/inshe'
 //                    ||
                         Yii::$app->controller->getUniqueId() === 'tool'
                         || Yii::$app->controller->getUniqueId() === 'tools/default'
+                        || Yii::$app->controller->getUniqueId() === 'tools/info'
                 ),
             ];
         }
 
-        $menu['items'][] = ['label' => 'About', 'url' => ['/site/about']];
+        if ($role > 5) {
+            $menu['items'][] = [
+//                'label' => ' <span class="glyphicon glyphicon-wrench"></span> ',
+                'label' => '<span class="glyphicon glyphicon-film"></span>',
+                'url' => ['/db/default/index'],
+                'active' => (
+//                        Yii::$app->controller->getRoute() === 'tool/index'
+//                    ||  Yii::$app->controller->getRoute() === 'tool/inshe'
+//                    ||
+                        Yii::$app->controller->getUniqueId() === 'db/default'
+//                        || Yii::$app->controller->getUniqueId() === 'tools/default'
+//                        || Yii::$app->controller->getUniqueId() === 'tools/info'
+                ),
+            ];
+        }
+
+//        $menu['items'][] = ['label' => 'About', 'url' => ['/site/about']];
+        $menu['items'][] =
+            [
+                'label' => 'About',
+                'url' => ['/about/index'],
+                'active' => Yii::$app->controller->getUniqueId() === 'about'
+
+            ];
 //        $menu['items'][] = ['label' => Yii::$app->controller->getUniqueId(), 'url' => ['#'] ];
 
         $menu['items'][] =

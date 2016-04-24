@@ -1,14 +1,14 @@
 <?php
 
-namespace app\models;
+namespace app\modules\admin\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Brands;
+use app\modules\admin\models\Brands;
 
 /**
- * BrandsSearch represents the model behind the search form about `app\models\Brands`.
+ * BrandsSearch represents the model behind the search form about `app\modules\admin\models\Brands`.
  */
 class BrandsSearch extends Brands
 {
@@ -19,7 +19,7 @@ class BrandsSearch extends Brands
     {
         return [
             [['id'], 'integer'],
-            [['name', 'description'], 'safe'],
+            [['name', 'description', 'full_description'], 'safe'],
         ];
     }
 
@@ -63,7 +63,8 @@ class BrandsSearch extends Brands
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'full_description', $this->full_description]);
 
         return $dataProvider;
     }
