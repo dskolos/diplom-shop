@@ -69,12 +69,8 @@ class MainMenu {
                 'label' => '<span class="glyphicon glyphicon-film"></span>',
                 'url' => ['/db/default/index'],
                 'active' => (
-//                        Yii::$app->controller->getRoute() === 'tool/index'
-//                    ||  Yii::$app->controller->getRoute() === 'tool/inshe'
-//                    ||
                         Yii::$app->controller->getUniqueId() === 'db/default'
-//                        || Yii::$app->controller->getUniqueId() === 'tools/default'
-//                        || Yii::$app->controller->getUniqueId() === 'tools/info'
+                        || Yii::$app->controller->getUniqueId() === 'db/note'
                 ),
             ];
         }

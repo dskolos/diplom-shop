@@ -12,11 +12,10 @@ $this->title = 'About';
 $leftMenu = AboutMenus::leftMenu();
 
 ?>
+<h1 class="text-center"><?= Html::encode($this->title) ?></h1>
+<br>
+
 <div class="about-index">
-
-
-    <h1 class="text-center"><?= Html::encode($this->title) ?></h1>
-    <br>
 
     <div class="row">
 
