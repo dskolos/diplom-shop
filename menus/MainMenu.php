@@ -37,13 +37,16 @@ class MainMenu {
             $menu['items'][] = [
 //                'label' => "admin",
                 'label' => '<span class="glyphicon glyphicon-wrench"></span>',
-//                'url' => ['/admin/default/index'],
-                'url' => ['/admin/index'],
-                'title' => 'aaa',
+                'url' => ['/admin/default/index'],
+//                'url' => ['/admin/index'],
+                'options' => [
+                    'title' => 'Адміністрування',
+                ],
                 'active' =>
-                    Yii::$app->controller->getUniqueId() === 'admin'
-//                    || Yii::$app->controller->getUniqueId() === 'admin/brands'
-
+                    Yii::$app->controller->getUniqueId() === 'admin/default'
+                    || Yii::$app->controller->getUniqueId() === 'admin/category'
+                    || Yii::$app->controller->getUniqueId() === 'admin/brand'
+                    || Yii::$app->controller->getUniqueId() === 'admin/product'
             ];
         }
 
@@ -52,6 +55,9 @@ class MainMenu {
 //                'label' => ' <span class="glyphicon glyphicon-wrench"></span> ',
                 'label' => '<span class="glyphicon glyphicon-info-sign"></span>',
                 'url' => ['/tools/info/index'],
+                'options' => [
+                    'title' => 'Інформація',
+                ],
                 'active' => (
 //                        Yii::$app->controller->getRoute() === 'tool/index'
 //                    ||  Yii::$app->controller->getRoute() === 'tool/inshe'
@@ -68,9 +74,15 @@ class MainMenu {
 //                'label' => ' <span class="glyphicon glyphicon-wrench"></span> ',
                 'label' => '<span class="glyphicon glyphicon-film"></span>',
                 'url' => ['/db/default/index'],
+                'options' => [
+                    'title' => 'Links',
+                ],
                 'active' => (
                         Yii::$app->controller->getUniqueId() === 'db/default'
                         || Yii::$app->controller->getUniqueId() === 'db/note'
+                        || Yii::$app->controller->getUniqueId() === 'db/tip'
+                        || Yii::$app->controller->getUniqueId() === 'db/tips'
+                        || Yii::$app->controller->getUniqueId() === 'db/category'
                 ),
             ];
         }

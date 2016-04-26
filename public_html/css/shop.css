@@ -39,6 +39,31 @@ body {
 
 }
 
+body {
+    /*font-size: 120%;*/
+}
+
 .footer {
     font-size: 85%;
+}
+
+.nav-first {
+    padding: 7px;
+    background-color: #e9e9ff;
+}
+.nav-first > li {
+    background-color: #fafaff;
+}
+.nav-second {
+    padding: 7px;
+    background-color: lightyellow;
+}
+.nav-second > li {
+    background-color: lightgoldenrodyellow;
+}
+.nav-second > li > a {
+    color: #009900;
+}
+.nav-second > li.active > a {
+    background-color: #009900;
 }

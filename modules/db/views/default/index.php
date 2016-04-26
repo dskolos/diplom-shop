@@ -12,7 +12,13 @@ $this->title = $title;
 
 ?>
 <div class="db-default-index">
-        <?= Nav::widget(DbMenus::topMenu()) ?>
+
+    <h1 class="text-center"> <span class="glyphicon glyphicon-film"></span> Links  </h1>
+
+    <?= Nav::widget(DbMenus::topMenu()) ?>
+    <br>
+
+    <?= Nav::widget(DbMenus::secondMenu()) ?>
 
 
 </div>

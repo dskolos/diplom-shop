@@ -51,7 +51,7 @@ class ToolsMenus {
             ],
             'items' => [
                 [
-                    'label' => 'Схеми бази даних',
+                    'label' => 'Схема бази даних',
                     'url' => ['/tools/info/index'],
                 ],
                 [
