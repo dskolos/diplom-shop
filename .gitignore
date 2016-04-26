@@ -14,7 +14,10 @@ Thumbs.db
 
 # composer vendor dir
 #   /vendor
-/public_html/favicon.ico
+
+public_html/favicon.ico
+config/db.php
+config/db.was.php
 
 # composer itself is not needed
 composer.phar
