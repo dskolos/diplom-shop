@@ -18,6 +18,7 @@ Thumbs.db
 
 public_html/favicon.ico
 config/db.php
+config/db.ext.php
 config/db.was.php
 
 # composer itself is not needed
