@@ -9,6 +9,7 @@ use app\menus\ToolsMenus;
 $this->title = 'Інформація';
 
 ?>
+
 <h1 class="text-center"> <span class="glyphicon glyphicon-info-sign"></span> Інформація </h1>
 <br>
 

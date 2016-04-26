@@ -9,8 +9,8 @@ class InfoController extends Controller
         return $this->render('index');
     }
 
-    public function actionInshe() {
-        return $this->render('inshe');
+    public function actionList() {
+        return $this->render('list');
     }
 
 }

@@ -55,8 +55,8 @@ class ToolsMenus {
                     'url' => ['/tools/info/index'],
                 ],
                 [
-                    'label' => 'Інше...',
-                    'url' => ['/tools/info/inshe'],
+                    'label' => 'Список літератури',
+                    'url' => ['/tools/info/list'],
                 ],
             ]
         ];

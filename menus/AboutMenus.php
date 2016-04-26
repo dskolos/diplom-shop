@@ -22,8 +22,8 @@ class AboutMenus {
                     'url' => ['/about/index'],
                 ],
                 [
-                    'label' => 'Список літератури',
-                    'url' => ['/about/list'],
+                    'label' => 'Powered',
+                    'url' => ['/about/powered'],
                 ],
             ]
         ];

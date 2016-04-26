@@ -9,8 +9,8 @@ class AboutController extends Controller {
         return $this->render('index');
     }
 
-    public function actionList() {
-        return $this->render('list');
+    public function actionPowered() {
+        return $this->render('powered');
     }
 
 }
