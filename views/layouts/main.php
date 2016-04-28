@@ -33,6 +33,7 @@ AppAsset::register($this);
 
     if ($role > 1) {
         echo "<img src='/i/a-p-i.jpg' class='navbar-diplom-shop-admin-image'>";
+        echo '<div class="admin-bar">';
         NavBar::begin([
 //            'brandLabel' => ' управління ',
 //            'brandUrl' => Yii::$app->homeUrl,
@@ -42,6 +43,7 @@ AppAsset::register($this);
             ],
         ]);
         echo Nav::widget(MainMenu::getAdminMenu());
+        echo '</div>';
         NavBar::end();
     }
 

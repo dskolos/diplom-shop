@@ -21,9 +21,6 @@
 .user-li span {
     font-weight: bold;
 }
-/*.almost-white {*/
-    /*background-color: #eee;*/
-/*}*/
 
 body {
     overflow-y: scroll;
@@ -66,28 +63,33 @@ body {
 
 
 
-/*.navbar-diplom-shop-admin > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {*/
-    /*background-image: url(/i/a-p-i.jpg);*/
-/*}*/
+.admin-bar > .navbar {
+    min-height: 36px;
+    height: 36px;
+}
 
-
+@media (min-width: 768px) {
+    /*.admin-bar > .navbar > .navbar-nav > li > a {*/
+    /*.navbar-nav > li > a {*/
+    .admin-bar > .navbar > .container > .navbar-collapse > .navbar-nav > li > a {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
 
 .navbar-inverse .navbar-nav > li > a {
     color: lightyellow;
 }
 .navbar-diplom-shop-admin .navbar-nav > li > a:hover {
-    /*color: lightblue;*/
     color: black;
-    /*background-color: #777;*/
     background-color: #bbb;
-    /*font-weight: bold;*/
 }
 .navbar-default .navbar-nav > li > a:hover {
     background-color: #efefef;
 }
 
 .navbar-diplom-shop-admin-image {
-    height: 50px;
+    height: 36px;
     width: 100%;
 }
 .navbar-diplom-shop-admin {
@@ -95,12 +97,15 @@ body {
     color: #ddd;
 }
 .navbar-diplom-shop {
-    margin-top: 50px;
+    margin-top: 36px;
 }
 .admin-li {
-    padding-top: 15px;
+    padding-top: 8px;
     margin-left: 18px;
     margin-right: 28px;
     font-weight: bold;
     color: yellow;
 }
+
+
+
