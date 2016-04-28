@@ -29,30 +29,52 @@ class MainMenu {
             ],
         ];
 
-        $menu['items'][] =
-            [
-                'label' => 'About',
-                'url' => ['/about/index'],
-                'active' => Yii::$app->controller->getUniqueId() === 'about'
-
-            ];
 //        $menu['items'][] = ['label' => Yii::$app->controller->getUniqueId(), 'url' => ['#'] ];
 
-        $menu['items'][] =
-            Yii::$app->user->isGuest ? (
-                '<li>' .
-                Html::beginForm(['/site/login'], 'post')
-                . Html::submitButton(
-                    'Увійти',
-                    ['class' => 'btn btn-success login-btn']
-                )
-                . Html::endForm()
-                . '</li>'
+//        $menu['items'][] =
+//            Yii::$app->user->isGuest ? (
+//                '<li>' .
+//                Html::beginForm(['/site/login'], 'post')
+//                . Html::submitButton(
+//                    'Увійти',
+//                    ['class' => 'btn btn-success login-btn']
+//                )
+//                . Html::endForm()
+//                . '</li>'
+//
+//            ) : (
+//                '<li class="user-li">' . 'Користувач:' .
+//                "<span style='color: $color'> $currentUser->name <span> " .
+//                '</li>' .
+//                '<li>' .
+//                Html::beginForm(['/site/logout'], 'post')
+//                . Html::submitButton(
+//                    'Вийти',
+//                    ['class' => 'btn btn-info logout-btn']
+//                )
+//                . Html::endForm()
+//                . '</li>'
+//            );
 
-            ) : (
+        if (!Yii::$app->user->isGuest) {
+            $menu['items'][] = (
                 '<li class="user-li">' . 'Користувач:' .
                 "<span style='color: $color'> $currentUser->name <span> " .
-                '</li>' .
+                '</li>'
+            );
+        };
+
+        if ($role > 0) {
+            $menu['items'][] =
+                [
+                    'label' => 'Замовлення',
+                    'url' => ['/user/index'],
+                    'active' => Yii::$app->controller->getUniqueId() === 'user'
+                ];
+        };
+
+        if (!Yii::$app->user->isGuest) {
+            $menu['items'][] = (
                 '<li>' .
                 Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
@@ -62,6 +84,25 @@ class MainMenu {
                 . Html::endForm()
                 . '</li>'
             );
+        } else {
+            $menu['items'][] = (
+                '<li>' .
+                Html::beginForm(['/site/login'], 'post')
+                . Html::submitButton(
+                    'Увійти',
+                    ['class' => 'btn btn-success login-btn']
+                )
+                . Html::endForm()
+                . '</li>'
+            );
+        };
+
+        $menu['items'][] =
+            [
+                'label' => 'About',
+                'url' => ['/about/index'],
+                'active' => Yii::$app->controller->getUniqueId() === 'about'
+            ];
 
         return $menu;
     }
