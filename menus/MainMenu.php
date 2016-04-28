@@ -29,65 +29,6 @@ class MainMenu {
             ],
         ];
 
-        if ($role > 1) {
-            $menu['items'][] = ['label' => "Продаж", 'url' => ['/sell/index']];
-        }
-
-        if ($role > 2) {
-            $menu['items'][] = [
-//                'label' => "admin",
-                'label' => '<span class="glyphicon glyphicon-wrench"></span>',
-                'url' => ['/admin/default/index'],
-//                'url' => ['/admin/index'],
-                'options' => [
-                    'title' => 'Адміністрування',
-                ],
-                'active' =>
-                    Yii::$app->controller->getUniqueId() === 'admin/default'
-                    || Yii::$app->controller->getUniqueId() === 'admin/category'
-                    || Yii::$app->controller->getUniqueId() === 'admin/brand'
-                    || Yii::$app->controller->getUniqueId() === 'admin/product'
-            ];
-        }
-
-        if ($role > 4) {
-            $menu['items'][] = [
-//                'label' => ' <span class="glyphicon glyphicon-wrench"></span> ',
-                'label' => '<span class="glyphicon glyphicon-info-sign"></span>',
-                'url' => ['/tools/info/index'],
-                'options' => [
-                    'title' => 'Інформація',
-                ],
-                'active' => (
-//                        Yii::$app->controller->getRoute() === 'tool/index'
-//                    ||  Yii::$app->controller->getRoute() === 'tool/inshe'
-//                    ||
-                        Yii::$app->controller->getUniqueId() === 'tool'
-                        || Yii::$app->controller->getUniqueId() === 'tools/default'
-                        || Yii::$app->controller->getUniqueId() === 'tools/info'
-                ),
-            ];
-        }
-
-        if ($role > 5) {
-            $menu['items'][] = [
-//                'label' => ' <span class="glyphicon glyphicon-wrench"></span> ',
-                'label' => '<span class="glyphicon glyphicon-film"></span>',
-                'url' => ['/db/default/index'],
-                'options' => [
-                    'title' => 'Links',
-                ],
-                'active' => (
-                        Yii::$app->controller->getUniqueId() === 'db/default'
-                        || Yii::$app->controller->getUniqueId() === 'db/note'
-                        || Yii::$app->controller->getUniqueId() === 'db/tip'
-                        || Yii::$app->controller->getUniqueId() === 'db/tips'
-                        || Yii::$app->controller->getUniqueId() === 'db/category'
-                ),
-            ];
-        }
-
-//        $menu['items'][] = ['label' => 'About', 'url' => ['/site/about']];
         $menu['items'][] =
             [
                 'label' => 'About',
@@ -121,6 +62,69 @@ class MainMenu {
                 . Html::endForm()
                 . '</li>'
             );
+
+        return $menu;
+    }
+
+    static function getAdminMenu() {
+
+        $currentUser = Yii::$app->user->identity;
+        $role = $currentUser->role;
+
+        $menu = [
+            'options' => ['class' => 'navbar-nav'],
+            'encodeLabels' => false,
+            'items' => [
+                '<li class="admin-li"> Управління:  </li>',
+            ],
+        ];
+
+        if ($role > 1) {
+            $menu['items'][] = [
+                'label' => "<span class='glyphicon glyphicon-glass'></span> &nbsp; Продаж",
+                'url' => ['/sell/index']];
+        }
+
+        if ($role > 2) {
+            $menu['items'][] = [
+                'label' => '<span class="glyphicon glyphicon-wrench"> Адміністрування </span>',
+                'url' => ['/admin/default/index'],
+                'active' =>
+                    Yii::$app->controller->getUniqueId() === 'admin/default'
+                    || Yii::$app->controller->getUniqueId() === 'admin/category'
+                    || Yii::$app->controller->getUniqueId() === 'admin/brand'
+                    || Yii::$app->controller->getUniqueId() === 'admin/product'
+            ];
+        }
+
+        if ($role > 4) {
+            $menu['items'][] = [
+                'label' => '<span class="glyphicon glyphicon-info-sign"> Інформація </span>',
+                'url' => ['/tools/info/index'],
+                'active' => (
+                        Yii::$app->controller->getUniqueId() === 'tool'
+                        || Yii::$app->controller->getUniqueId() === 'tools/default'
+                        || Yii::$app->controller->getUniqueId() === 'tools/info'
+                ),
+            ];
+        }
+
+        if ($role > 5) {
+            $menu['items'][] = [
+                'label' => '<span class="glyphicon glyphicon-film"> Links </span>',
+                'url' => ['/db/default/index'],
+//                'options' => [
+//                    'title' => 'Links',
+//                ],
+                'active' => (
+                        Yii::$app->controller->getUniqueId() === 'db/default'
+                        || Yii::$app->controller->getUniqueId() === 'db/note'
+                        || Yii::$app->controller->getUniqueId() === 'db/tip'
+                        || Yii::$app->controller->getUniqueId() === 'db/tips'
+                        || Yii::$app->controller->getUniqueId() === 'db/category'
+                ),
+            ];
+        }
 
         return $menu;
     }

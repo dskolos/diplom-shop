@@ -26,7 +26,7 @@ $this->title = 'Інформація';
             <div>
                 <h3 class="text-center"> Схема бази даних: </h3>
                 <div class="img-center">
-                    <img src="/i/d-pictures/db07.2016-04-26_07.21.13.png" alt="" class="wide-picture">
+                    <img src="/i/d-pictures/db08.2016-04-28_04.34.26.png" alt="" class="wide-picture">
                 </div>
             </div>
 

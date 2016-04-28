@@ -28,11 +28,34 @@ AppAsset::register($this);
 <div class="wrap">
 
     <?php
+
+    $role = Yii::$app->user->identity->role;
+
+    if ($role > 1) {
+        echo "<img src='/i/a-p-i.jpg' class='navbar-diplom-shop-admin-image'>";
+        NavBar::begin([
+//            'brandLabel' => ' управління ',
+//            'brandUrl' => Yii::$app->homeUrl,
+//            'brandUrl' => false,
+            'options' => [
+                'class' => "navbar-inverse navbar-fixed-top navbar-diplom-shop-admin",
+            ],
+        ]);
+        echo Nav::widget(MainMenu::getAdminMenu());
+        NavBar::end();
+    }
+
+    if ($role > 1) {
+        $class = "navbar-default navbar-fixed-top navbar-diplom-shop";
+    } else {
+        $class = "navbar-default navbar-fixed-top";
+    };
+
     NavBar::begin([
         'brandLabel' => 'DIPLOM SHOP',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-default navbar-fixed-top',
+            'class' => $class,
         ],
     ]);
 

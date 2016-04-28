@@ -8,7 +8,8 @@ $this->title = 'Продаж';
 
     <div class="text-center">
 
-        <h1> Продаж </h1>
+<!--        <h1> Продаж </h1>-->
+        <h1> <span class='glyphicon glyphicon-glass'></span>&nbsp; Продаж </h1>
         <br>
 
     </div>

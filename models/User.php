@@ -27,8 +27,8 @@ class User extends Object implements IdentityInterface {
         ],
         '501' => [
             'id' => '501',
-//            'name' => 'Колос Д.С.',
-            'name' => 'КДС',
+            'name' => 'Колос Д.С.',
+//            'name' => 'КДС',
             'username' => 'kolos',
             'password' => 'kolos-pwd',
             'authKey' => 'test501key',
@@ -37,7 +37,7 @@ class User extends Object implements IdentityInterface {
         ],
         '503' => [
             'id' => '503',
-            'name' => 'КФД',
+            'name' => 'Колос Ф.Д.',
             'username' => 'fedia',
             'password' => 'fedia-pwd',
             'authKey' => 'test503key',
