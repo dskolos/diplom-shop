@@ -69,13 +69,19 @@ body {
 }
 
 @media (min-width: 768px) {
-    /*.admin-bar > .navbar > .navbar-nav > li > a {*/
-    /*.navbar-nav > li > a {*/
     .admin-bar > .navbar > .container > .navbar-collapse > .navbar-nav > li > a {
         padding-top: 8px;
         padding-bottom: 8px;
     }
 }
+
+.admin-bar > .navbar > .container > .navbar-header > .navbar-toggle {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 
 .navbar-inverse .navbar-nav > li > a {
     color: lightyellow;
@@ -107,5 +113,41 @@ body {
     color: yellow;
 }
 
+.some-left {
+    margin-left: 30px;
+}
+
+.admin-default-index > .row > .col-sm-4 {
+    border: dotted thin;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.img-in-update {
+    height: 130px;
+    padding: 7px;
+    border: dotted thin;
+    border-radius: 12px;
+    margin: 2px;
+
+}
+
+.img-in-t-item {
+    height: 120px;
+    padding: 7px;
+    border: dotted thin;
+    /*border-radius: 12px;*/
+    margin: 2px;
+    float: left;
+}
+
+.t-item {
+    height: 180px;
+    padding: 7px;
+    border: dotted thin;
+    border-radius: 12px;
+    margin: 7px;
+    overflow-y: scroll;
+}
 
 

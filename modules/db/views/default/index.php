@@ -14,10 +14,13 @@ $this->title = $title;
 <div class="db-default-index">
 
     <h1 class="text-center"> <span class="glyphicon glyphicon-film"></span> Links  </h1>
+    <br>
 
+    <h3> Ссылки DbMenus::topMenu() </h3>
     <?= Nav::widget(DbMenus::topMenu()) ?>
     <br>
 
+    <h3> Ссылки DbMenus::secondMenu() </h3>
     <?= Nav::widget(DbMenus::secondMenu()) ?>
 
 

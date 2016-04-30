@@ -9,6 +9,7 @@ use Yii;
  *
  * @property string $id
  * @property string $name
+ * @property string $photo_url
  * @property string $price
  * @property string $amount
  * @property string $category_id
@@ -40,7 +41,7 @@ class Product extends \yii\db\ActiveRecord
             [['name', 'price', 'amount'], 'required'],
             [['price', 'amount', 'category_id', 'brand_id', 'recommended'], 'integer'],
             [['full_description'], 'string'],
-            [['name', 'description'], 'string', 'max' => 255],
+            [['name', 'photo_url', 'description'], 'string', 'max' => 255],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
             [['brand_id'], 'exist', 'skipOnError' => true, 'targetClass' => Brand::className(), 'targetAttribute' => ['brand_id' => 'id']],
         ];
@@ -54,6 +55,7 @@ class Product extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
+            'photo_url' => 'Photo Url',
             'price' => 'Price',
             'amount' => 'Amount',
             'category_id' => 'Category ID',

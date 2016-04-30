@@ -31,28 +31,51 @@ $this->title = 'Адміністрування';
 
     <?//= ShowLoremPixel::widget() ?>
 
-    <h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Таблиці: </h2>
-    <br>
-
     <div class="row">
 
-        <div class="col-sm-4 text-center">
-            <a href="<?= Url::toRoute('/admin/category/index') ?>" class="btn btn-primary">
-                <h3> Category </h3>
-            </a>
-        </div>
+        <?php
+        $links = [
+            [
+                'title' => 'Таблиця <strong> техніки </strong> <small> (&nbsp;Grid&nbsp;) </small>',
+                'href' => '/admin/product/index',
+                'name' => 'Product',
+            ],
+            [
+                'title' => 'Таблиця <strong> техніки </strong> <small> (&nbsp;List&nbsp;) </small>',
+                'href' => '/admin/product-list-view/index',
+                'name' => 'Product',
+            ],
+            [ 'title' => 'blank', ],
+            [ 'title' => 'blank', ],
+            [
+                'title' => 'Таблиця <strong> категорій </strong> <small> (&nbsp;Grid&nbsp;) </small>',
+                'href' => '/admin/category/index',
+                'name' => 'Category',
+            ],
+            [
+                'title' => 'Таблиця <strong> брендів </strong> <small> (&nbsp;Grid&nbsp;) </small>',
+                'href' => '/admin/brand/index',
+                'name' => 'Brand',
+            ],
+            [ 'title' => 'blank', ],
+        ];
 
-        <div class="col-sm-4 text-center">
-            <a href="<?= Url::toRoute('/admin/brand/index') ?>" class="btn btn-primary">
-                <h3> Brand </h3>
-            </a>
-        </div>
-
-        <div class="col-sm-4 text-center">
-            <a href="<?= Url::toRoute('/admin/product/index') ?>" class="btn btn-primary">
-                <h3> Product </h3>
-            </a>
-        </div>
+        $i = 0;
+        foreach ($links as $link) {  ?>
+            <?php if (($i != 0) and (($i % 3) == 0) )  { ?>
+    </div>
+    <div class="row">
+            <?php }  ?>
+        <?php if ($link['title'] != 'blank') { ?>
+            <div class="col-sm-4 text-center">
+                <h3> <?=$link['title']?> <br> <br>
+                    <a href="<?= Url::toRoute($link["href"]); ?>" class="btn btn-primary">
+                        <h5> <?=$link['name']?> </h5>
+                    </a>
+                </h3> <br>
+            </div>
+        <?php }  ?>
+        <? ; $i++; /*echo $i;*/ } ?>
 
     </div>
 

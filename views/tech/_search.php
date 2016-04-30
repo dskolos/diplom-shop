@@ -25,15 +25,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'amount') ?>
 
-    <?php // echo $form->field($model, 'category_id') ?>
+    <?php  echo $form->field($model, 'category_id') ?>
 
-    <?php // echo $form->field($model, 'brand_id') ?>
+    <?php  echo $form->field($model, 'brand_id') ?>
 
-    <?php // echo $form->field($model, 'recommended') ?>
+    <?php  echo $form->field($model, 'recommended') ?>
 
-    <?php // echo $form->field($model, 'description') ?>
+    <?php  echo $form->field($model, 'description') ?>
 
-    <?php // echo $form->field($model, 'full_description') ?>
+    <?php  echo $form->field($model, 'full_description') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

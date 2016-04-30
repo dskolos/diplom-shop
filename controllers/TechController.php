@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\ProductSearch;
 
 class TechController extends Controller {
     public function behaviors() {
@@ -45,7 +46,16 @@ class TechController extends Controller {
     }
 
     public function actionIndex() {
-        return $this->render('index');
+
+        $searchModel = new ProductSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]
+
+        );
     }
 
     public function actionLogin() {
