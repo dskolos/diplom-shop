@@ -3,6 +3,9 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
+use yii\helpers\ArrayHelper;
+
 
 /**
  * This is the model class for table "brand".
@@ -14,8 +17,17 @@ use Yii;
  *
  * @property Product[] $products
  */
-class Brand extends \yii\db\ActiveRecord
-{
+class Brand extends ActiveRecord {
+
+    public static $brandsMap;
+
+    public static function getBrandsMap() {
+        if (!isset(static::$brandsMap)) {
+            static::$brandsMap = ArrayHelper::map(Brand::find()->all(), 'id', 'name');
+        }
+        return static::$brandsMap;
+    }
+
     /**
      * @inheritdoc
      */

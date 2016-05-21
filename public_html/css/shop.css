@@ -132,15 +132,6 @@ body {
 
 }
 
-.img-in-t-item {
-    height: 120px;
-    padding: 7px;
-    border: dotted thin;
-    /*border-radius: 12px;*/
-    margin: 2px;
-    float: left;
-}
-
 .t-item {
     height: 180px;
     padding: 7px;
@@ -150,4 +141,15 @@ body {
     overflow-y: scroll;
 }
 
+.img-in-t-item {
+    max-height: 120px;
+    max-width: 98%;
+    padding: 7px;
+    border: dotted thin;
+    margin: 32px 2px 2px 12px;
+}
 
+.content-in-t-item {
+    margin: 7px;
+    padding: 5px;
+}
