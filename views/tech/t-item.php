@@ -26,10 +26,8 @@ use app\models\Brand;
                     Бренд - <strong> <?= Brand::getBrandsMap()[$model->brand_id] ?> </strong>
                     <br>
                     Ціна - <strong> <?= $model->price ?> </strong> гривень
-
-
-
-
+                    <br>
+                    Оцінка - <strong> <?= $model->recommended ?> </strong> (з 5 балів)
                 </div>
 
                 <div class="col-sm-3">
