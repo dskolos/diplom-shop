@@ -5,11 +5,7 @@
 use app\models\Category;
 use app\models\Brand;
 
-
-
 ?>
-
-<!--<div class="row">-->
 
     <div class="col-xs-3 text-center">
         <img src='/img/<?= $model->photo_url ?>' class="img-in-t-item">
@@ -20,7 +16,9 @@ use app\models\Brand;
         <div class="content-in-t-item">
             <div class="row">
                 <div class="col-sm-9">
-                    <h4><strong> <?= $model->name ?> </strong></h4>
+                    <strong> <?= $model->name ?> </strong>
+                    <br>
+                    <small>
                     Категорія - <strong> <?= Category::getCategoriesMap()[$model->category_id] ?> </strong>
                     <br>
                     Бренд - <strong> <?= Brand::getBrandsMap()[$model->brand_id] ?> </strong>
@@ -28,6 +26,7 @@ use app\models\Brand;
                     Ціна - <strong> <?= $model->price ?> </strong> гривень
                     <br>
                     Оцінка - <strong> <?= $model->recommended ?> </strong> (з 5 балів)
+                    </small>
                 </div>
 
                 <div class="col-sm-3">
@@ -37,23 +36,13 @@ use app\models\Brand;
                     <?php } ?>
                 </div>
                 <div class="col-sm-12">
-<!--                    Категорія - <strong> --><?//= Category::getCategoriesMap()[$model->category_id] ?><!-- </strong>-->
-<!--                    <br>-->
-<!--                    Бренд - <strong> --><?//= Brand::getBrandsMap()[$model->brand_id] ?><!-- </strong>-->
-<!--                    <br>-->
-<!--                    Ціна - <strong> --><?//= $model->price ?><!-- </strong> гривень-->
-                    <br>
+                    <small>
                     &nbsp;&nbsp;&nbsp; Короткий опис:
                     <br> <i> <?= $model->description ?> </i>
+                    </small>
                 </div>
             </div>
-
-            <!--        --><?php
-//        var_dump($model);
-//        ?>
 
         </div>
 
     </div>
-
-<!--</div>-->
