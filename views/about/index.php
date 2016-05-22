@@ -7,7 +7,6 @@ use app\menus\AboutMenus;
 use yii\helpers\Html;
 
 $this->title = 'About';
-//$this->params['breadcrumbs'][] = $this->title;
 
 $leftMenu = AboutMenus::leftMenu();
 
@@ -25,7 +24,12 @@ $leftMenu = AboutMenus::leftMenu();
 
         <div class="col-sm-6 text-center">
 
-            <p> Матеріали до дипломної роботи: <br> "<strong>Інтернет-магазин комп'ютерної техніки</strong>" </p>
+            <p> Матеріали до дипломної роботи: <br>
+                "<strong>
+                    Інтернет-магазин комп'ютерної техніки
+                    на базі Yii Framework
+                </strong>"
+            </p>
             <p> Керівник - <strong>Гроза П.М.</strong> </p>
             <p> Виконавець - <strong>Колос Д.С.</strong> </p>
 

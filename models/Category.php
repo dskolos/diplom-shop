@@ -22,14 +22,10 @@ class Category extends ActiveRecord {
 
     public static function getCategoriesMap() {
         if (!isset(static::$categoriesMap)) {
-//            $categories = Category::find()->all();
-//            $categoriesMap = ArrayHelper::map($categories, 'id', 'name');
             static::$categoriesMap = ArrayHelper::map(Category::find()->all(), 'id', 'name');
         }
         return static::$categoriesMap;
     }
-
-
 
     /**
      * @inheritdoc
