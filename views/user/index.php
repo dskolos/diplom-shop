@@ -1,5 +1,8 @@
 <?php
 /* @var $this yii\web\View */
+
+$this->title = 'Замовлення';
+
 ?>
 <!--<h1>user/index</h1>-->
 <!---->
