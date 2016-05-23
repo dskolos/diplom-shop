@@ -32,7 +32,7 @@ use app\models\Brand;
             <div class="col-sm-3">
                 &nbsp; <br>
                 <?php if (Yii::$app->user->identity->role > 1) { ?>
-                <a href="/admin/product/update?id=<?=$model->id?>" class="btn-sm btn-warning">
+                <a href="/admin/product/update?id=<?=$model->id?>" class="btn btn-sm btn-warning">
                     <small>Редагувати</small>
                 </a>
                 <?php } ?>
