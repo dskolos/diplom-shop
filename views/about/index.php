@@ -30,8 +30,8 @@ $leftMenu = AboutMenus::leftMenu();
                     на базі Yii Framework
                 </strong>"
             </p>
-            <p> Керівник - <strong>Гроза П.М.</strong> </p>
-            <p> Виконавець - <strong>Колос Д.С.</strong> </p>
+            <p> Керівник - <strong>Саманцов О.О.</strong> </p>
+            <p> Виконавець - <strong>Шапочка О.В.</strong> </p>
 
         </div>
 
